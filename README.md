@@ -68,7 +68,7 @@ Path: C:\Program Files\nodejs\node.exe
 - [nvm-windows](https://github.com/coreybutler/nvm-windows) installed and working
 - At least one Node.js version installed via `nvm install <version>`
 
-### Setup for Gemini CLI
+### Getting started
 
 1. Clone or download this repository:
 
@@ -76,7 +76,7 @@ Path: C:\Program Files\nodejs\node.exe
 git clone https://github.com/CITIZEN-Zzz/my-node-preset.git
 ```
 
-2. In your Gemini CLI configuration, add the skill reference pointing to the `SKILL.md` file in this repository.
+2. Point your AI agent to the `SKILL.md` file in this repository. The integration method depends on your agent platform — typically you add a skill reference in your agent's configuration.
 
 3. On first use, the agent will guide you through a one-time setup to define your presets:
 
@@ -99,11 +99,10 @@ Agent: Switched to stable
        Node: v18.18.0  npm: 9.8.1
 ```
 
-### For other AI agent platforms
+### Integration points
 
-This skill is defined as a declarative `SKILL.md` file. Any agent platform that supports reading skill definitions can integrate it by referencing or importing the `SKILL.md` from this repository.
+This skill is a declarative `SKILL.md` file. Any AI agent platform that supports reading skill definitions can integrate it.
 
-The key integration points are:
 - **Intent triggers**: listed in the "Use this skill for" section of `SKILL.md`
 - **Behavior contract**: switching rules, verification steps, and failure handling
 - **Persistence**: presets should be stored as user-level local configuration
