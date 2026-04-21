@@ -1,5 +1,11 @@
 # my-node-preset
 
+![Version](https://img.shields.io/badge/version-0.1.1-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows)
+![Node Manager](https://img.shields.io/badge/requires-nvm--windows-orange)
+![Skill Type](https://img.shields.io/badge/type-AI%20Agent%20Skill-blueviolet)
+
 A lightweight skill for AI agents that switches Node.js versions by personal meaning instead of memorized numbers.
 
 You define three presets once:
@@ -53,6 +59,54 @@ Switched to Node v16.15.0
 Node: v16.15.0
 npm: 8.5.5
 Path: C:\Program Files\nodejs\node.exe
+
+## Installation
+
+### Prerequisites
+
+- Windows operating system
+- [nvm-windows](https://github.com/coreybutler/nvm-windows) installed and working
+- At least one Node.js version installed via `nvm install <version>`
+
+### Setup for Gemini CLI
+
+1. Clone or download this repository:
+
+```bash
+git clone https://github.com/CITIZEN-Zzz/my-node-preset.git
+```
+
+2. In your Gemini CLI configuration, add the skill reference pointing to the `SKILL.md` file in this repository.
+
+3. On first use, the agent will guide you through a one-time setup to define your presets:
+
+```
+Agent: Let's set up your Node presets.
+       Which version should "old" map to?
+You:   14.18.2
+Agent: Which version should "stable" map to?
+You:   18.18.0
+Agent: Which version should "new" map to?
+You:   22.17.0
+Agent: Presets saved. You're all set.
+```
+
+4. After setup, just say what you need:
+
+```
+You:   switch to stable
+Agent: Switched to stable
+       Node: v18.18.0  npm: 9.8.1
+```
+
+### For other AI agent platforms
+
+This skill is defined as a declarative `SKILL.md` file. Any agent platform that supports reading skill definitions can integrate it by referencing or importing the `SKILL.md` from this repository.
+
+The key integration points are:
+- **Intent triggers**: listed in the "Use this skill for" section of `SKILL.md`
+- **Behavior contract**: switching rules, verification steps, and failure handling
+- **Persistence**: presets should be stored as user-level local configuration
 
 ## Who this is for
 
